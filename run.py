@@ -13,3 +13,16 @@ print("You have entered the\nbattlefield take aim and fire".upper())
 print("-----------------------------")
 print("You have 15 shots to take\ndown the 5 battleships".upper())
 print("-----------------------------")
+
+
+# Setting row and column explanation
+def make_board(board):
+    print("   A B C D E F G H")
+    print("-----------------------------")
+    # Print each row of the board
+    for i, row in enumerate(board):
+        # Convert the row to a string with '|' separators
+        row_str = '|'.join(row)
+        # Print the row number and the row string
+        print(f"{i+1:2d}|{row_str}|")
+    print("-----------------------------")
