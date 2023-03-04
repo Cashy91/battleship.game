@@ -26,3 +26,19 @@ def make_board(board):
         # Print the row number and the row string
         print(f"{i+1:2d}|{row_str}|")
     print("-----------------------------")
+
+
+# row input and checking values
+def get_ship_location():
+    row = input("Please enter a ship row 1-8:\n".upper())
+    while row not in "12345678":
+        print("Please enter a valid row.".upper())
+        row = input("Please enter a ship row 1-8:\n".upper())
+
+    # column input and checking values
+    column = input("Please enter a ship column A-H:\n".upper())
+    while column not in "ABCDEFGH":
+        print("Please enter a valid column.".upper())
+        column = input("Please enter a ship column A-H:\n".upper())
+
+    return int(row) - 1, to_num[column]
