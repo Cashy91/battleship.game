@@ -51,3 +51,16 @@ def create_ships(board):
         while board[ship_r][ship_cl] == "X":
             ship_r, ship_cl = randint(0, 7), randint(0, 7)
         board[ship_r][ship_cl] = "X"
+
+
+# Function that counts the remaning ships
+def count_hit_ships(board):
+    count = 0
+    for row in board:
+        for column in row:
+            if column == "X":
+                count += 1
+    return count
+
+
+create_ships(hidden_board)
