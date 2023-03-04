@@ -64,3 +64,26 @@ def count_hit_ships(board):
 
 
 create_ships(hidden_board)
+
+
+# Game messages and checking for hit or miss also win or lose
+turns = 15
+while turns > 0:
+    make_board(guess_board)
+    row, column = get_ship_location()
+    if guess_board[row][column] == "-":
+        print("You dont want do do that again do you?".upper())
+    elif hidden_board[row][column] == "X":
+        print("Bullseye thats a hit!".upper())
+        guess_board[row][column] = "X"
+        turns -= 1
+    else:
+        print("Sorry, you poffed".upper())
+        guess_board[row][column] = "-"
+        turns -= 1
+    if count_hit_ships(guess_board) == 5:
+        print("Congratulations you have conquered this battlefield".upper())
+        break
+    print(f"You have {turns} turns remaining".upper())
+    if turns == 0:
+        print("Game Over, better luck next time!".upper())
