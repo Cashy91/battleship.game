@@ -42,3 +42,12 @@ def get_ship_location():
         column = input("Please enter a ship column A-H:\n".upper())
 
     return int(row) - 1, to_num[column]
+
+
+# Function that creates the ships and declere X as hit
+def create_ships(board):
+    for ship in range(5):
+        ship_r, ship_cl = randint(0, 7), randint(0, 7)
+        while board[ship_r][ship_cl] == "X":
+            ship_r, ship_cl = randint(0, 7), randint(0, 7)
+        board[ship_r][ship_cl] = "X"
